@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>page title</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+			$('#refresh-button').click(function(){
+				$.getJSON("http://api.open-notify.org/iss-now.json", function(json) {
+					$("#longitude").html(json.iss_position.longitude);
+					$("#latitude").html(json.iss_position.latitude);
+				});
+			});
+			
+		});
+		
+	</script>
+
+</head>
+<body>
+	<div style="color:green">
+		<button class="btn-danger" id="refresh-button" style="margin: 20px">refresh-button</button>
+		<p style="display: block;">their current longitude is:</p>
+		<p id="longitude"></p>
+		<p style="display: inline-block;">their current latitude is :</p>
+		<p id="latitude"></p>
+	</p>
+</div>
+
+</body>
+</html>
