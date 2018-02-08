@@ -4,5 +4,6 @@ I have started working with git so this is my first read me file.
 --Hadi
 
 
-on branch master
+
+not branch master
 
