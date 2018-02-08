@@ -6,5 +6,5 @@ I have started working with git so this is my first read me file.
 
 
 
-not branch master
+on branch master
 
